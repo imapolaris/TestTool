@@ -1,0 +1,21 @@
+﻿<Window x:Class="TestTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:layer="clr-namespace:VTSCore.Layers"
+        xmlns:cmd="clr-namespace:VTSCore.Commands"
+        xmlns:ToolBars="clr-namespace:VTSCore.ToolBars" 
+        xmlns:StatusBar="clr-namespace:VTSCore.Layers.StatusBar" 
+        xmlns:test="clr-namespace:VTSCore.Layers.Radar"
+        Title="雷达调试工具" Height="640" Width="960" WindowState="Maximized" Closing="Window_Closing" Closed="Window_Closed">
+    <Window.CommandBindings >
+        <CommandBinding Command="cmd:MenuItem.ExitClick" Executed="Exit_Click" />
+    </Window.CommandBindings>
+    <DockPanel LastChildFill="True">
+        <ToolBars:ToolBarsMenuItems DockPanel.Dock="Top" VerticalAlignment="Top" Panel.ZIndex="100"/>
+        <StatusBar:StatusBarInfo  DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Panel.ZIndex="101"/>
+        <Grid HorizontalAlignment="Stretch">
+            <test:RadarConfigUserControl x:Name="rcuc" Panel.ZIndex="10" Width="300" VerticalAlignment="Top" HorizontalAlignment="Right" DockPanel.Dock="Right" Visibility="Collapsed"/>
+            <layer:MapLayer x:Name="layer" Panel.ZIndex="1" HorizontalAlignment="Stretch"/>
+        </Grid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="VTSCore.Layers.MapLayer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:map="clr-namespace:VTSCore.Layers.Maps"
+             xmlns:radar="clr-namespace:VTSCore.Layers.Radar"
+             xmlns:lines ="clr-namespace:VTSCore.Layers.Lines"
+             xmlns:plot="clr-namespace:VTSCore.Layers.Plotting"
+             xmlns:tracks="clr-namespace:VTSCore.Layers.Tracks"
+             xmlns:cmd="clr-namespace:VTSCore.Commands"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.ContextMenu>
+        <ContextMenu Name="contextMenu" Placement="Bottom" PlacementRectangle="30,50,0,0">
+        </ContextMenu>
+    </UserControl.ContextMenu>
+    <Grid>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <TranslateTransform x:Name="transFrom" />
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <map:SeaMap x:Name="map" />
+        <radar:Radar x:Name="radar"/>
+        <plot:MapPlotting x:Name="plot"/>
+        <tracks:MapTracks x:Name="tracks"/>
+        <lines:MapLines x:Name="lines"/>
+        <Rectangle Name="rect" VerticalAlignment="Top" HorizontalAlignment="Left"></Rectangle>
+    </Grid>
+</UserControl>

@@ -1,0 +1,134 @@
+﻿<Window x:Class="VTSCore.Layers.Radar.RadarSettingClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Closing="Window_Closing"
+        xmlns:l="clr-namespace:VTSCore.Layers.Base"
+        Title="雷达数据配置" Height="650" Width="1000">
+    <Window.Resources>
+        <!--<SnippetEditBoxStyle>-->
+        <Style x:Key="{x:Type l:EditBox}" TargetType="{x:Type l:EditBox}" >
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type l:EditBox}">
+                        <TextBlock x:Name="PART_TextBlockPart" VerticalAlignment="Top"
+                                   Text="{Binding Path=Value,RelativeSource =  {RelativeSource TemplatedParent}, Mode=TwoWay}" 
+                                   MinWidth="{Binding Path=Width, RelativeSource={RelativeSource TemplatedParent}}">
+                        </TextBlock>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--</SnippetEditBoxStyle>-->
+    </Window.Resources>
+    
+    <Grid>
+        <!--雷达模块相关参数调整-->
+        <ListView Name="radarsListView" Margin="5,0,330,290"  BorderBrush="#FF40C01D" SelectionChanged="radarsListView_SelectionChanged" MouseDoubleClick="radarsListView_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="名称" DisplayMemberBinding="{Binding Path=Heading, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="Ip" DisplayMemberBinding="{Binding Path=Ip, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="端口" DisplayMemberBinding="{Binding Path=Port, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="RpcEndPoint" DisplayMemberBinding="{Binding Path=RpcEndPoint, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="配色方案">
+                    <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox x:Name="ColorTableComboBox" Margin="-3,-1" MinWidth="80" 
+                                          Tag="{Binding Path=Uid}" 
+                                          ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=ListBox},Path=DataContext.Sources}"
+                                          SelectedIndex="{Binding Path=ColorTableIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                          SelectionChanged="ColorTableComboBox_SelectionChanged"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="启用">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox x:Name="cbRadarIsEnable" Click="cbRadarIsEnable_Click" Tag="{Binding Path=Uid}" IsChecked="{Binding Path=IsEnable, UpdateSourceTrigger=PropertyChanged}" ></CheckBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Name="btAdd" Content="新增雷达" Click="btAdd_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Height="25" Margin="30,0,0,255"/>
+        <Button Name="btDelete" Content="删除雷达" Click="btDelete_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Height="25" Margin="120,0,50,255"/>
+        <Button Name="btEditRadarAddress" Content="编辑参数" Click="editMenu_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Height="25" Margin="210,0,50,255"/>
+        
+        <!--雷达通道部分设置-->
+        <Label Content="雷达图像通道列表："  Margin="5,0,290,220" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <ListView x:Uid="radarChannelList" Name="radarChannelListView" VerticalAlignment="Bottom" Margin="5,0,330,50" Height="170" BorderBrush="#FF40C01D">
+            <ListView.ContextMenu>
+                <ContextMenu Name="channelRightMouseMenu" StaysOpen="true" Background="WhiteSmoke">
+                    <MenuItem Name="channelRevisionMenu" Header="修改参数">
+                        <MenuItem Name="channelRenamingMenu" Header="通道名称" Click="channelRenamingMenu_Click"/>
+                        <MenuItem Name="channelReFilterMenu" Header="滤波器" Click="channelReFilterMenu_Click"/>
+                        <MenuItem Name="channelRePortMenu" Header="输出端口" Click="channelRePortMenu_Click"/>
+                    </MenuItem>
+                    <MenuItem Name="channelSelectedMenu" Header="使用该端口" Click="channelSelectedMenu_Click"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="通道名称" Width="140" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <l:EditBox Name="ChannelName" Width="120" Height="25" Margin="-3,-1,-3,-1" VerticalAlignment="Center" Value="{Binding Path=Name,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="滤波器" Width="90">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="btFilter" Tag="{Binding Path=LegacyPort}" Width="80" Margin="-3,-1,-3,-1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="修改" Click="btFilter_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="输出端口" Width="100" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <l:EditBox Name="ChannelPort" Width="80" VerticalAlignment="Center" Value="{Binding Path=LegacyPort,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="数据速率" Width="100" DisplayMemberBinding="{Binding Path=Rate, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Name="btChannelAdd" Content="新增通道" Click="btChannelAdd_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Height="25" Margin="30,0,0,10"/>
+        <Button Name="btChannelDelete" Content="删除通道" Click="btChannelDelete_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Height="25" Margin="120,0,0,10"/>
+        <Button Name="btChannelSave" Content="保存列表" Click="btChannelSave_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Height="25" Margin="210,0,0,10"/>
+        <Button Name="btChannelReset" Content="重新读取" Click="btChannelReset_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Height="25" Margin="300,0,50,10"/>
+        
+        <!--雷达配置参数可编辑部分设置模块-->
+        <ListView Name="radarConfigListView" VerticalAlignment="Top" HorizontalAlignment="Right" Height="270" Width="320" Margin="550,0,5,0" BorderBrush="#FF00C01D">
+            <!--Bind Item-->
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="参数名称" Width="70" DisplayMemberBinding="{Binding Path=Heading}" />
+                    <GridViewColumn Header="系统获取参数" Width="120" DisplayMemberBinding="{Binding Path=BaseValue}"/>
+                    <GridViewColumn Header="当前使用参数" Width="120" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <l:EditBox Name="editBoxRadarStatus" Width="120" Height="25" VerticalAlignment="Center" Value="{Binding Path=EditingValue,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}" SourceUpdated="EditBox_SourceUpdated"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <!--雷达配置参数不可编辑部分设置模块-->
+        <ListView Name="radarStatusListView" HorizontalAlignment="Right" Margin="550,275,5,50" Width="320" BorderBrush="#FFC0C0C0">
+            <!--Bind Item-->
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="参数名称" Width="90" DisplayMemberBinding="{Binding Path=Heading}" />
+                    <GridViewColumn Header="系统获取参数" Width="160" DisplayMemberBinding="{Binding Path=BaseValue}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Name="btSaveRadarStatus" Content="保存修改" Click="btSaveRadarStatus_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="80" Height="25" Margin="300,0,180,10"/>
+        <Button Name="btResetRadarStatus" Content="重新获取" Click="btResetRadarStatus_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="80" Height="25" Margin="400,0,80,10"/>
+    </Grid>
+</Window>

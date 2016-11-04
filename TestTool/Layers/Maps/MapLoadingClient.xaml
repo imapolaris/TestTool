@@ -1,0 +1,9 @@
+﻿<Window x:Class="VTSCore.Layers.Maps.MapLoadingClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="#00FFFFFF"
+        Title="" Height="100" Width="240">
+    <Grid>
+        <Label Name="lbLoading" Content="加载海图中……" FontSize="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>

@@ -1,0 +1,740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12A3346C-662B-482F-B6ED-9D0CD6EED6F6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestTool</RootNamespace>
+    <AssemblyName>TestTool</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>f249947e</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CCTVClient, Version=1.0.401.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\CCTVClient.dll</HintPath>
+    </Reference>
+    <Reference Include="ColorPicker">
+      <HintPath>..\Libs\ColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net1213, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Log4Net1213.3.3.1\lib\net40\Common.Logging.Log4Net1213.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CommonBase, Version=1.2.417.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\CommonBase.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamicObjContainer">
+      <HintPath>..\Libs\DynamicObjContainer.dll</HintPath>
+    </Reference>
+    <Reference Include="ECDIS">
+      <HintPath>..\Libs\ECDIS.dll</HintPath>
+    </Reference>
+    <Reference Include="FrameworkBase">
+      <HintPath>..\Libs\FrameworkBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Geometry">
+      <HintPath>..\Libs\Geometry.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lz4Net">
+      <HintPath>..\packages\Lz4.Net.1.0.98\lib\net45\Lz4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="RadarImageProjection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\RadarImageProjection.dll</HintPath>
+    </Reference>
+    <Reference Include="RadarNetCmd, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\RadarNetCmd.dll</HintPath>
+    </Reference>
+    <Reference Include="RadarServiceNetCmds, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\RadarServiceNetCmds.dll</HintPath>
+    </Reference>
+    <Reference Include="S52">
+      <HintPath>..\Libs\S52.dll</HintPath>
+    </Reference>
+    <Reference Include="S57">
+      <HintPath>..\Libs\S57.dll</HintPath>
+    </Reference>
+    <Reference Include="Seecool.Common, Version=1.0.506.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Seecool.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Seecool.Messaging, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Seecool.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Seecool.Radar, Version=1.0.424.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Seecool.Radar.dll</HintPath>
+    </Reference>
+    <Reference Include="Seecool.RemoteCall, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Seecool.RemoteCall.dll</HintPath>
+    </Reference>
+    <Reference Include="SpatialQueryNetCmd">
+      <HintPath>..\Libs\SpatialQueryNetCmd.dll</HintPath>
+    </Reference>
+    <Reference Include="SvrFramework">
+      <HintPath>..\Libs\SvrFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Rx-Xaml.2.2.5\lib\net45\System.Reactive.Windows.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TargetInfoParser">
+      <HintPath>..\Libs\TargetInfoParser.dll</HintPath>
+    </Reference>
+    <Reference Include="TileLandMapLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\TileLandMapLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="zlib.net">
+      <HintPath>..\packages\zlib.net.1.0.4.0\lib\zlib.net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common\CompareTypeValue.cs" />
+    <Compile Include="Common\DataEligibleDetection.cs" />
+    <Compile Include="Common\MenuBarsBaseInfo.cs" />
+    <Compile Include="Common\WindowFrontor.cs" />
+    <Compile Include="Common\WindowStateDetect.cs" />
+    <Compile Include="Common\DefaultConfig.cs" />
+    <Compile Include="Layers\Base\DataEditUnitObj.cs" />
+    <Compile Include="Layers\Base\EditBox.cs" />
+    <Compile Include="Layers\Base\EditBoxAdorner.cs" />
+    <Compile Include="Layers\Base\ListViewBaseInfo.cs" />
+    <Compile Include="Layers\Base\ListViewUnitValue.cs" />
+    <Compile Include="Layers\Base\TimeOutSettingClient.xaml.cs">
+      <DependentUpon>TimeOutSettingClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Maps\FeatureSelectUI.cs" />
+    <Compile Include="Layers\Maps\CoastlineData\FeatureSelectClient.xaml.cs">
+      <DependentUpon>FeatureSelectClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Maps\CoastlineData\StringShowClient.xaml.cs">
+      <DependentUpon>StringShowClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Maps\LocatorAndBorder.cs" />
+    <Compile Include="Layers\Maps\MapBorderInfo.cs" />
+    <Compile Include="Layers\Maps\MapLoadingClient.xaml.cs">
+      <DependentUpon>MapLoadingClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Plotting\ConfigMaskColor.cs" />
+    <Compile Include="Layers\Plotting\ImportAreaByStringClient.xaml.cs">
+      <DependentUpon>ImportAreaByStringClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Plotting\ImportAreaByDataBaseClient.xaml.cs">
+      <DependentUpon>ImportAreaByDataBaseClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Plotting\LocalRegions.cs" />
+    <Compile Include="Layers\Plotting\PlottingNameObj.cs" />
+    <Compile Include="Layers\Plotting\RadarAreaClient.xaml.cs">
+      <DependentUpon>RadarAreaClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Base\ModifyValueClient.xaml.cs">
+      <DependentUpon>ModifyValueClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Plotting\RadarRegionFromString.cs" />
+    <Compile Include="Layers\Plotting\RadarRegionsInfo.cs" />
+    <Compile Include="Layers\Plotting\RegionAndRadars.cs" />
+    <Compile Include="Layers\Radar\RadarAddressEvent.cs" />
+    <Compile Include="Layers\Radar\RadarChannelInfo.cs" />
+    <Compile Include="Layers\Radar\RadarChannelsInfo.cs" />
+    <Compile Include="Layers\Radar\RadarColorClient.xaml.cs">
+      <DependentUpon>RadarColorClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Radar\RadarColorSchemeEditorClient.xaml.cs">
+      <DependentUpon>RadarColorSchemeEditorClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Radar\RadarConfigUserControl.xaml.cs">
+      <DependentUpon>RadarConfigUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Radar\RadarSettingControl.cs" />
+    <Compile Include="Layers\Radar\RadarShow\ColorTableDataConfig.cs" />
+    <Compile Include="Layers\Base\ConfigConnectionSettingClient.xaml.cs">
+      <DependentUpon>ConfigConnectionSettingClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Radar\RadarShow\RadarImage.cs" />
+    <Compile Include="Layers\Radar\RadarSettingClient.xaml.cs">
+      <DependentUpon>RadarSettingClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Radar\RadarColorTableDataInfo.cs" />
+    <Compile Include="Layers\Radar\RadarConnection.cs" />
+    <Compile Include="Layers\Radar\RadarInfomation.cs" />
+    <Compile Include="Layers\Tracks\AIS\WeiXingAISConfig.cs" />
+    <Compile Include="Layers\Tracks\AIS\WXAIS\WXAISDrawer.cs" />
+    <Compile Include="Layers\Tracks\AIS\WXAIS\WXAISReceiver.cs" />
+    <Compile Include="Layers\Tracks\AIS\WXAIS\WXAISTarget.cs" />
+    <Compile Include="Layers\Tracks\AIS\WXAIS\WXAISTele123.cs" />
+    <Compile Include="Layers\Tracks\AIS\WXAIS\WXAISTele18.cs" />
+    <Compile Include="Layers\Tracks\AIS\WXAIS\WXAISTele19.cs" />
+    <Compile Include="Layers\Tracks\AIS\WXAIS\WXAISTele21.cs" />
+    <Compile Include="Layers\Tracks\AIS\WXAIS\WXAISTele4.cs" />
+    <Compile Include="Layers\Tracks\AIS\WXAIS\WXAISTele5.cs" />
+    <Compile Include="Layers\Tracks\Base\SelectingTargetCmd.cs" />
+    <Compile Include="Layers\Tracks\Base\StringSettingClient.xaml.cs">
+      <DependentUpon>StringSettingClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Tracks\Base\TrackingTargetCanvas.cs" />
+    <Compile Include="Layers\Tracks\Base\WindowOwnerBinding.cs" />
+    <Compile Include="Layers\Tracks\CCTV\CCTVCanvas.cs" />
+    <Compile Include="Layers\Tracks\CCTV\CCTVConfigForm.xaml.cs">
+      <DependentUpon>CCTVConfigForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Tracks\CCTV\CCTVNodeTree.cs" />
+    <Compile Include="Layers\Tracks\CCTV\CCTVsCanvas.cs" />
+    <Compile Include="Layers\Tracks\CCTV\CCTVNodeShow.cs" />
+    <Compile Include="Layers\Tracks\CCTV\CCTVTarget.cs" />
+    <Compile Include="Layers\Tracks\CCTV\CCTVTreeCtrlClient.xaml.cs">
+      <DependentUpon>CCTVTreeCtrlClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Tracks\CCTV\ConfigCCTV.cs" />
+    <Compile Include="Layers\Tracks\CCTV\TrackAdjustment.cs" />
+    <Compile Include="Layers\Tracks\CCTV\TrackVideoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\Tracks\CCTV\TrackVideoForm.Designer.cs">
+      <DependentUpon>TrackVideoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Tracks\AIS\AISConfig.cs" />
+    <Compile Include="Layers\Tracks\AIS\AisReceiver.cs" />
+    <Compile Include="Common\ConfigBase.cs" />
+    <Compile Include="Layers\Tracks\Base\ReceiverBase.cs" />
+    <Compile Include="Layers\Tracks\Base\TracksCanvasDrawer.cs" />
+    <Compile Include="Layers\Tracks\GPS\Base\GPSBaseReceover.cs" />
+    <Compile Include="Layers\Tracks\GPS\Base\GPSTracksCanvasDrawer.cs" />
+    <Compile Include="Layers\Tracks\GPS\Base\SubjectShip.cs" />
+    <Compile Include="Layers\Tracks\GPS\HZGPS\HZGPSData.cs" />
+    <Compile Include="Layers\Tracks\GPS\HZGPS\HZGPSDataReceiver.cs" />
+    <Compile Include="Layers\Tracks\GPS\HZGPS\HZGPSTarget.cs" />
+    <Compile Include="Layers\Tracks\GPS\HZGPS\HZGPSTrackDrawer.cs" />
+    <Compile Include="Layers\Tracks\GPS\SDGPS\SDGPSData.cs" />
+    <Compile Include="Layers\Tracks\GPS\SDGPS\SDGPSDataReceiver.cs" />
+    <Compile Include="Layers\Tracks\GPS\SDGPS\SDGPSDrawer.cs" />
+    <Compile Include="Layers\Tracks\GPS\SDGPS\SDGPSTarget.cs" />
+    <Compile Include="Layers\Tracks\GPS\SDGPS\ShanDongGPSConfig.cs" />
+    <Compile Include="Layers\Tracks\RadarMuxerTrack\RadarMuxerClient.xaml.cs">
+      <DependentUpon>RadarMuxerClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Tracks\RadarMuxerTrack\RadarMuxerTarget.cs" />
+    <Compile Include="Layers\Tracks\RadarMuxerTrack\RadarMuxerTrackDrawer.cs" />
+    <Compile Include="Layers\Tracks\RadarMuxerTrack\RadarMuxTrackReceiver.cs" />
+    <Compile Include="Layers\Tracks\SCRadarTrack\SeecoolRadarConfig.cs" />
+    <Compile Include="Layers\Tracks\Base\IpPortSettingClient.xaml.cs">
+      <DependentUpon>IpPortSettingClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Tracks\Base\TrackCanvas.cs" />
+    <Compile Include="Layers\Tracks\Base\TracksCanvas.cs" />
+    <Compile Include="Layers\Tracks\AIS\AISTrackDrawer.cs" />
+    <Compile Include="Layers\Tracks\AIS\AisTarget.cs" />
+    <Compile Include="Common\ConfigFile.cs" />
+    <Compile Include="Layers\Tracks\MapTracks.xaml.cs">
+      <DependentUpon>MapTracks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Lines\DistanceMeasurementLines.cs" />
+    <Compile Include="Common\PointsBaseInfomation.cs" />
+    <Compile Include="Common\StatusBarBaseInfomation.cs" />
+    <Compile Include="Common\ActivatingStatus.cs" />
+    <Compile Include="Commands\MenuItem.cs" />
+    <Compile Include="Layers\Lines\MapLines.xaml.cs">
+      <DependentUpon>MapLines.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\MapLayer.xaml.cs">
+      <DependentUpon>MapLayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Plotting\MapPlotting.xaml.cs">
+      <DependentUpon>MapPlotting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Plotting\PlottingArea.cs" />
+    <Compile Include="Layers\Plotting\PlottingAreaList.cs" />
+    <Compile Include="Layers\Plotting\PlottingAreaSettingInfomation.cs" />
+    <Compile Include="Common\ConfigConnection.cs" />
+    <Compile Include="Layers\Radar\RadarsSettingInfo.cs" />
+    <Compile Include="Layers\Radar\RadarCanvas.cs" />
+    <Compile Include="Layers\Radar\RadarSettingInfo.cs" />
+    <Compile Include="Layers\Radar\RadarsCanvas.cs" />
+    <Compile Include="Layers\Tracks\SCRadarTrack\ScRadarTarget.cs" />
+    <Compile Include="Layers\Tracks\SCRadarTrack\SeecoolRadarTrackDrawer.cs" />
+    <Compile Include="Layers\Tracks\SCRadarTrack\SeecoolRadarReceiver.cs" />
+    <Compile Include="Layers\Tracks\SCVideoTrack\VideoRecognizeConfig.cs" />
+    <Compile Include="Layers\Tracks\SCVideoTrack\SeecoolVideoReceiver.cs" />
+    <Compile Include="Layers\Tracks\SCVideoTrack\SeecoolVideoTrackDrawer.cs" />
+    <Compile Include="Layers\Tracks\Base\SelectedTargetDraw.cs" />
+    <Compile Include="Layers\Tracks\SCVideoTrack\ScVideoTarget.cs" />
+    <Compile Include="Layers\Tracks\TracksDraws.cs" />
+    <Compile Include="Layers\Tracks\Base\TrackSourceInfo.cs" />
+    <Compile Include="Layers\Tracks\TrackSource.cs" />
+    <Compile Include="Layers\Tracks\TracksSourceClient.xaml.cs">
+      <DependentUpon>TracksSourceClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Tracks\VTSSource\ConfigVTS.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSAtlas2Drawer.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSAtlas2Target.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSAtlasDrawer.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSAtlasTarget.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSHittTarget.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSHittTrackDrawer.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSNetCmd\Atlas2Data.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSNetCmd\AtlasData.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSNetCmd\EncodStr.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSNetCmd\HittData.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSNetCmd\NorcontrolData.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSNetCmd\SofrelogData.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSNorcontrolTarget.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSNorcontrolTrackDrawer.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSSofrelogDrawer.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSSofrelogTarget.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSPlugin\Atlas2Receiver.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSPlugin\AtlasReceiver.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSPlugin\HittReceiver.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSPlugin\NorcontrolReceiver.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSPlugin\SofrelogReceiver.cs" />
+    <Compile Include="Layers\Tracks\VTSSource\VTSPlugin\TcpipReceiver.cs" />
+    <Compile Include="Layers\Util.cs" />
+    <Compile Include="Layers\Radar\RadarShow\CCTVConnection.cs" />
+    <Compile Include="Layers\Radar\RadarShow\ColorLinear.cs" />
+    <Compile Include="Layers\Radar\RadarShow\ColorTableData.cs" />
+    <Compile Include="Layers\Radar\RadarShow\MessageReader.cs" />
+    <Compile Include="Layers\Radar\Radar.xaml.cs">
+      <DependentUpon>Radar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Radar\RotateFilter.cs" />
+    <Compile Include="Layers\Radar\ZLibUtil.cs" />
+    <Compile Include="Layers\StatusBar\StatusBarInfo.xaml.cs">
+      <DependentUpon>StatusBarInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolBars\ToolBarsMenuItems.xaml.cs">
+      <DependentUpon>ToolBarsMenuItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\AdornerManager.cs" />
+    <Compile Include="Utility\MouseEventSource.cs" />
+    <Compile Include="Utility\Util.cs" />
+    <Compile Include="Web References\WebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Page Include="Layers\Base\TimeOutSettingClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Maps\CoastlineData\FeatureSelectClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Maps\CoastlineData\StringShowClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Maps\MapLoadingClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Plotting\ImportAreaByStringClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Plotting\ImportAreaByDataBaseClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Plotting\RadarAreaClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Base\ModifyValueClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Base\ConfigConnectionSettingClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Radar\RadarColorClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Radar\RadarColorSchemeEditorClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Radar\RadarConfigUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Radar\RadarSettingClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Tracks\Base\StringSettingClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Tracks\CCTV\CCTVConfigForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Tracks\Base\IpPortSettingClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Tracks\CCTV\CCTVTreeCtrlClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Tracks\MapTracks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Lines\MapLines.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\MapLayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Plotting\MapPlotting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Tracks\RadarMuxerTrack\RadarMuxerClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Layers\Tracks\TracksSourceClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\Setting.cs" />
+    <Compile Include="Commands\Tracks.cs" />
+    <Compile Include="Commands\TrafficEnv.cs" />
+    <Compile Include="Commands\Window.cs" />
+    <Compile Include="Commands\Zoom.cs" />
+    <Compile Include="Common\MapPoint.cs" />
+    <Compile Include="Common\NotifyItem.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Layers\Maps\SeaMap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Layers\Radar\Radar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Layers\StatusBar\StatusBarInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolBars\ToolBarsMenuItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Layers\Maps\DisplaySetting.cs" />
+    <Compile Include="Layers\Maps\MapRender.cs" />
+    <Compile Include="Layers\Maps\Parts\ISeaMapPart.cs" />
+    <Compile Include="Layers\Maps\Parts\MoveByKey.cs" />
+    <Compile Include="Layers\Maps\Parts\SeaMapInfo.cs" />
+    <Compile Include="Layers\Maps\Parts\SetAsCenter.cs" />
+    <Compile Include="Layers\Maps\Parts\Zoom.cs" />
+    <Compile Include="Layers\Maps\SeaMap.xaml.cs">
+      <DependentUpon>SeaMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Layers\Tracks\CCTV\TrackVideoForm.resx">
+      <DependentUpon>TrackVideoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Web References\WebReference\HZShipDataWebService.wsdl" />
+    <None Include="Web References\WebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DynamicBaseCanvas\DynamicBaseCanvas.csproj">
+      <Project>{110599b9-960e-4e10-8579-719e54dc959d}</Project>
+      <Name>DynamicBaseCanvas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GISV4Immigration\GISV4Immigration.csproj">
+      <Project>{d0acaae8-da4d-448d-8ad1-a2bfb02a6aa6}</Project>
+      <Name>GISV4Immigration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MapRender\MapRender.csproj">
+      <Project>{e008eee4-4363-43c1-a489-265019de05da}</Project>
+      <Name>MapRender</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TargetInfomation\TargetInfomation.csproj">
+      <Project>{ab36e782-4a23-4b23-a15a-fd7f73a69c92}</Project>
+      <Name>TargetInfomation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WebReference\HZShipDataWebService.disco" />
+    <Resource Include="icon.ico" />
+    <Resource Include="Resources\雷达基站.png" />
+    <Content Include="x64\avcodec-55.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\avdevice-55.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\avfilter-4.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\avformat-55.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\avutil-52.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\FFmpeg64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\lz4X64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\OpenAL32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\PlayCtrl.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\postproc-52.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\swresample-0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\swscale-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\avcodec-55.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\avdevice-55.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\avfilter-4.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\avformat-55.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\avutil-52.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\FFmpeg32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\lz4X86.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\PlayCtrl.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\postproc-52.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\swresample-0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\swscale-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://172.21.25.33:30611/HZShipDataWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference\</RelPath>
+      <UpdateFromURL>http://172.21.25.33:30611/HZShipDataWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TestTool_WebReference_HZShipDataWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

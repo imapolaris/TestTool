@@ -1,0 +1,54 @@
+﻿<Window x:Class="VTSCore.Layers.Radar.RadarColorSchemeEditorClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="雷达配色方案设置" Height="300" Width="260">
+    <Grid>
+        <Label Content="方案名称:" Margin="5,5,0,0" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <TextBox Name="tbHeading" Text="{Binding Path=Heading, UpdateSourceTrigger=PropertyChanged}" Height="25" VerticalAlignment="Top" Margin="80,5,10,0"/>
+        <Label Content="余晖级数:" Margin="5,40,0,0" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <TextBox Name="tbTrailState" Text="{Binding Path=TrailState, UpdateSourceTrigger=PropertyChanged}" Height="25" VerticalAlignment="Top" Margin="80,40,10,0"/>
+        
+        <Label Content="回波起始:" Margin="5,70,0,0" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Button Name="btFrontStart" Height="30" VerticalAlignment="Top" Margin="80,70,10,0" Click="btFrontStart_Click" Background="Transparent">
+            <Rectangle Width="80" Height="24"
+                Stroke="Black" StrokeThickness="1">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="{Binding Path=FrontStart, UpdateSourceTrigger=PropertyChanged}" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </Button>
+        
+        <Label Content="回波结束:" Margin="5,110,0,0" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Button Name="tbFrontEnd" Height="30" VerticalAlignment="Top" Margin="80,110,10,0" Click="tbFrontEnd_Click" Background="Transparent">
+            <Rectangle Width="80" Height="24"
+                Stroke="Black" StrokeThickness="1">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="{Binding Path=FrontEnd, UpdateSourceTrigger=PropertyChanged}" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </Button>
+        
+        <Label Content="余晖起始:" Margin="5,150,0,0" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Button Name="tbTrailStart" Height="30" VerticalAlignment="Top" Margin="80,150,10,0" Click="tbTrailStart_Click" Background="Transparent">
+            <Rectangle Width="80" Height="24"
+                Stroke="Black" StrokeThickness="1">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="{Binding Path=TrailStart, UpdateSourceTrigger=PropertyChanged}" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </Button>
+        
+        <Label Content="余晖结束:" Margin="5,190,0,0" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Button Name="tbTrailEnd" Height="30" VerticalAlignment="Top" Margin="80,190,10,0" Click="tbTrailEnd_Click" Background="Transparent">
+            <Rectangle Width="80" Height="24"
+                Stroke="Black" StrokeThickness="1">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="{Binding Path=TrailEnd, UpdateSourceTrigger=PropertyChanged}" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </Button>
+        
+        <Button Name="btOk" Content="确定" Click="btOk_Click" Margin="-90,0,0,5" VerticalAlignment="Bottom" Width="80" Height="25"/>
+        <Button Name="btQuit" Content="取消" Click="btQuit_Click" Margin="90,0,0,5" VerticalAlignment="Bottom" Width="80" Height="25"/>
+    </Grid>
+</Window>

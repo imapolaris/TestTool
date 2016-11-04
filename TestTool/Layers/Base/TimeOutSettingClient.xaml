@@ -1,0 +1,13 @@
+﻿<Window x:Class="VTSCore.Layers.Base.TimeOutSettingClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ResizeMode="NoResize" Closed="Window_Closed"
+        Title="目标轨迹长度设置" Height="120" Width="300">
+    <Grid>
+        <Label Content="时间：" VerticalAlignment="Top" Margin="5" Height="25"/>
+        <TextBox Name="tbData" VerticalAlignment="Top" Margin="60,5,50,0" Height="25"/>
+        <Label Content="分钟" VerticalAlignment="Top" Margin="50,5,10,0" HorizontalAlignment="Right" Height="25"/>
+        <Button Name="btOk" Content="确定" VerticalAlignment="Top" Margin="-110,50,0,0" Click="btOk_Click" Width="100" Height="25"/>
+        <Button Name="btQuit" Content="取消" VerticalAlignment="Top" Margin="110,50,0,0" Click="btQuit_Click" Width="100" Height="25"/>
+    </Grid>
+</Window>

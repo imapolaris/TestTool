@@ -1,0 +1,42 @@
+﻿<Window x:Class="VTSCore.Layers.Tracks.TracksSourceClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Closed="Window_Closed"
+        Title="信号源配置" Height="400" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="89*"/>
+            <ColumnDefinition Width="207*"/>
+        </Grid.ColumnDefinitions>
+        <ListView Name="sourceListView" Margin="5,0,0,0" BorderBrush="#FF40C01D" MouseDoubleClick="sourceListView_MouseDoubleClick" Grid.ColumnSpan="2" ToolTip="通过双击修改配置参数！">
+            <ListView.ContextMenu>
+                <ContextMenu StaysOpen="true" Background="WhiteSmoke">
+                    <MenuItem Header="配置设置" Name="resetsettingMenu" Click="resetsettingMenu_Click"/>
+                    <MenuItem Header="修改备注" Name="resetRemarksMenu" Click="resetRemarksMenu_Click"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="序号" Width="40" DisplayMemberBinding="{Binding Path=Uid}"/>
+                    <GridViewColumn Header="类型" Width="120" DisplayMemberBinding="{Binding Path=Type}"/>
+                    <GridViewColumn Header="配置" Width="220" DisplayMemberBinding="{Binding Path=Setting}"/>
+                    <GridViewColumn Header="启用" Width="40">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox x:Name="cbEnable" Click="cbEnable_Click" Tag="{Binding Path=Uid}" IsChecked="{Binding Path=IsEnable, UpdateSourceTrigger=PropertyChanged}" ></CheckBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="可见" Width="40">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox x:Name="cbVisible" Click="cbVisible_Click" Tag="{Binding Path=Uid}" IsChecked="{Binding Path=IsVisible, UpdateSourceTrigger=PropertyChanged}" ></CheckBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="备注" Width="80"   DisplayMemberBinding="{Binding Path=Remarks}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

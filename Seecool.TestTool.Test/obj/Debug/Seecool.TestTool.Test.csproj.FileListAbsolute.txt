@@ -1,0 +1,16 @@
+D:\CCTV\Radar\TestTool\Seecool.TestTool.Test\bin\Debug\Seecool.TestTool.Test.dll
+D:\CCTV\Radar\TestTool\Seecool.TestTool.Test\bin\Debug\Seecool.TestTool.Test.pdb
+D:\CCTV\Radar\TestTool\Seecool.TestTool.Test\bin\Debug\TargetInfomation.dll
+D:\CCTV\Radar\TestTool\Seecool.TestTool.Test\bin\Debug\TargetInfomation.pdb
+D:\CCTV\Radar\TestTool\Seecool.TestTool.Test\obj\Debug\Seecool.TestTool.Test.csprojResolveAssemblyReference.cache
+D:\CCTV\Radar\TestTool\Seecool.TestTool.Test\obj\Debug\Seecool.TestTool.Test.dll
+D:\CCTV\Radar\TestTool\Seecool.TestTool.Test\obj\Debug\Seecool.TestTool.Test.pdb
+D:\CCTV\Radar\TestTool\Seecool.TestTool.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+F:\CCTV\Radar\TestTool\Seecool.TestTool.Test\bin\Debug\Seecool.TestTool.Test.dll
+F:\CCTV\Radar\TestTool\Seecool.TestTool.Test\bin\Debug\Seecool.TestTool.Test.pdb
+F:\CCTV\Radar\TestTool\Seecool.TestTool.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+F:\CCTV\Radar\TestTool\Seecool.TestTool.Test\bin\Debug\TargetInfomation.dll
+F:\CCTV\Radar\TestTool\Seecool.TestTool.Test\bin\Debug\TargetInfomation.pdb
+F:\CCTV\Radar\TestTool\Seecool.TestTool.Test\obj\Debug\Seecool.TestTool.Test.csprojResolveAssemblyReference.cache
+F:\CCTV\Radar\TestTool\Seecool.TestTool.Test\obj\Debug\Seecool.TestTool.Test.dll
+F:\CCTV\Radar\TestTool\Seecool.TestTool.Test\obj\Debug\Seecool.TestTool.Test.pdb

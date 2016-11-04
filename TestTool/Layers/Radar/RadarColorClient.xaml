@@ -1,0 +1,29 @@
+﻿<Window x:Class="VTSCore.Layers.Radar.RadarColorClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        MinWidth="420" MaxWidth="420"
+        Title="雷达配色方案" Height="400" Width="420">
+    <Grid>
+        <!--雷达配色方案列表-->
+        <ListView Name="colorSchemesListView" Margin="5,0,0,40"  BorderBrush="#FF40C01D" HorizontalAlignment="Left" SelectionChanged="colorSchemesListView_SelectionChanged" MouseDoubleClick="colorSchemesListView_MouseDoubleClick" ToolTip="双击编辑方案">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="方案名称" Width="180" DisplayMemberBinding="{Binding Path=Heading, UpdateSourceTrigger=PropertyChanged}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--雷达配色方案参数-->
+        <ListView Name="colorSchemeListView" Margin="200,0,5,40"  BorderBrush="#FFCCCCCC">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="参数名称" Width="80" DisplayMemberBinding="{Binding Path=Heading, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Header="数值" Width="100" DisplayMemberBinding="{Binding Path=BaseValue, UpdateSourceTrigger=PropertyChanged}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <Button Name="btAdd" Content="新增" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="25" Margin="15,0,0,5" Width="80" Click="btAdd_Click"/>
+        <Button Name="btDelete" Content="删除" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="25" Margin="100,0,0,5" Width="80" Click="btDelete_Click"/>
+        <Button Name="btQuit" Content="退出" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" Margin="220,0,15,5" Width="80" Click="btQuit_Click"/>
+    </Grid>
+</Window>

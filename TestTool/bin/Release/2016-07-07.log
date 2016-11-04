@@ -1,0 +1,6 @@
+14:32:24:create PeriodTimer, callback is VTSCore.Layers.Radar.RadarCanvas Void onTimerCallBack(System.Object), internal is 1000
+14:32:24:create PeriodTimer, callback is SeeCool.GISFramework.Util.ExcutionObserver Void flush(System.Object), internal is 1000
+14:36:09:create PeriodTimer, callback is VTSCore.Layers.Radar.RadarCanvas Void onTimerCallBack(System.Object), internal is 1000
+14:36:29:create PeriodTimer, callback is VTSCore.Layers.Radar.RadarCanvas Void onTimerCallBack(System.Object), internal is 1000
+14:38:54:create PeriodTimer, callback is VTSCore.Layers.Radar.RadarCanvas Void onTimerCallBack(System.Object), internal is 1000
+14:39:11:create PeriodTimer, callback is VTSCore.Layers.Radar.RadarCanvas Void onTimerCallBack(System.Object), internal is 1000

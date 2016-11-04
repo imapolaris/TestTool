@@ -1,0 +1,72 @@
+[INFO] [2016/01/26 15:53:04,645] [1] [0] TestTool.MainWindow: - 软件启动……
+[ERROR] [2016/01/26 15:53:04,854] [1] [0] VTSCore.Data.Common.ConfigFile`1: - 未能找到文件：C:\Users\wang\AppData\Local\Seecool\TestTool\Default.xml
+[ERROR] [2016/01/26 15:53:07,626] [1] [0] VTSCore.Data.Common.ConfigFile`1: - 未能找到文件：C:\Users\wang\AppData\Local\Seecool\TestTool\RadarInfomationConfig.xml
+[WARN] [2016/01/26 15:53:07,632] [1] [0] VTSCore.Layers.Plotting.LocalRegions: - System.IO.FileNotFoundException: 未能找到文件“C:\Users\wang\AppData\Local\Seecool\TestTool\InvalidRadarAreaData.txt”。
+文件名:“C:\Users\wang\AppData\Local\Seecool\TestTool\InvalidRadarAreaData.txt”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path)
+   在 VTSCore.Layers.Plotting.LocalRegions.readLocalRegions()
+[INFO] [2016/01/26 15:53:07,639] [1] [0] VTSCore.Layers.Tracks.TracksDraws: - 初始化信号源配置
+[ERROR] [2016/01/26 15:53:07,643] [1] [0] VTSCore.Data.Common.ConfigFile`1: - 未能找到文件：C:\Users\wang\AppData\Local\Seecool\TestTool\信号源配置.xml
+[ERROR] [2016/01/26 15:53:07,683] [1] [0] VTSCore.Data.Common.ConfigFile`1: - 未能找到文件：C:\Users\wang\AppData\Local\Seecool\TestTool\CCTVConfig.xml
+[INFO] [2016/01/26 15:53:07,687] [1] [0] VTSCore.Layers.Tracks.MapTracks+<OnInitialized>d__0: - 初始化信号源配置完毕
+[WARN] [2016/01/26 15:53:36,394] [1] [0] VTSCore.Layers.Plotting.LocalRegions: - System.IO.FileNotFoundException: 未能找到文件“C:\Users\wang\AppData\Local\Seecool\TestTool\InvalidRadarAreaData.txt”。
+文件名:“C:\Users\wang\AppData\Local\Seecool\TestTool\InvalidRadarAreaData.txt”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path)
+   在 VTSCore.Layers.Plotting.LocalRegions.readLocalRegions()
+[INFO] [2016/01/26 15:53:37,503] [1] [0] System.Windows.Window: - 软件退出。
+[INFO] [2016/01/26 15:54:18,650] [1] [0] TestTool.MainWindow: - 软件启动……
+[ERROR] [2016/01/26 15:54:18,776] [1] [0] VTSCore.Data.Common.ConfigFile`1: - 未能找到文件：C:\Users\wang\AppData\Local\Seecool\TestTool\Default.xml
+[ERROR] [2016/01/26 15:54:19,476] [1] [0] VTSCore.Data.Common.ConfigFile`1: - 未能找到文件：C:\Users\wang\AppData\Local\Seecool\TestTool\RadarInfomationConfig.xml
+[WARN] [2016/01/26 15:54:19,488] [1] [0] VTSCore.Layers.Plotting.LocalRegions: - System.IO.FileNotFoundException: 未能找到文件“C:\Users\wang\AppData\Local\Seecool\TestTool\InvalidRadarAreaData.txt”。
+文件名:“C:\Users\wang\AppData\Local\Seecool\TestTool\InvalidRadarAreaData.txt”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path)
+   在 VTSCore.Layers.Plotting.LocalRegions.readLocalRegions()
+[INFO] [2016/01/26 15:54:19,497] [1] [0] VTSCore.Layers.Tracks.TracksDraws: - 初始化信号源配置
+[ERROR] [2016/01/26 15:54:19,500] [1] [0] VTSCore.Data.Common.ConfigFile`1: - 未能找到文件：C:\Users\wang\AppData\Local\Seecool\TestTool\信号源配置.xml
+[ERROR] [2016/01/26 15:54:19,505] [1] [0] VTSCore.Data.Common.ConfigFile`1: - 未能找到文件：C:\Users\wang\AppData\Local\Seecool\TestTool\CCTVConfig.xml
+[INFO] [2016/01/26 15:54:19,509] [1] [0] VTSCore.Layers.Tracks.MapTracks+<OnInitialized>d__0: - 初始化信号源配置完毕
+[WARN] [2016/01/26 15:54:45,995] [1] [0] VTSCore.Layers.Plotting.LocalRegions: - System.IO.FileNotFoundException: 未能找到文件“C:\Users\wang\AppData\Local\Seecool\TestTool\InvalidRadarAreaData.txt”。
+文件名:“C:\Users\wang\AppData\Local\Seecool\TestTool\InvalidRadarAreaData.txt”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path)
+   在 VTSCore.Layers.Plotting.LocalRegions.readLocalRegions()
+[INFO] [2016/01/26 15:54:47,152] [1] [0] System.Windows.Window: - 软件退出。
+[INFO] [2016/01/26 15:56:59,886] [1] [0] TestTool.MainWindow: - 软件启动……
+[ERROR] [2016/01/26 15:57:00,108] [1] [0] VTSCore.Data.Common.ConfigFile`1: - 未能找到文件：C:\Users\wang\AppData\Local\Seecool\TestTool\Default.xml
+[ERROR] [2016/01/26 15:57:01,215] [1] [0] VTSCore.Data.Common.ConfigFile`1: - 未能找到文件：C:\Users\wang\AppData\Local\Seecool\TestTool\RadarInfomationConfig.xml
+[WARN] [2016/01/26 15:57:01,221] [1] [0] VTSCore.Layers.Plotting.LocalRegions: - System.IO.FileNotFoundException: 未能找到文件“C:\Users\wang\AppData\Local\Seecool\TestTool\InvalidRadarAreaData.txt”。
+文件名:“C:\Users\wang\AppData\Local\Seecool\TestTool\InvalidRadarAreaData.txt”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path)
+   在 VTSCore.Layers.Plotting.LocalRegions.readLocalRegions()
+[INFO] [2016/01/26 15:57:01,228] [1] [0] VTSCore.Layers.Tracks.TracksDraws: - 初始化信号源配置
+[ERROR] [2016/01/26 15:57:01,236] [1] [0] VTSCore.Data.Common.ConfigFile`1: - 未能找到文件：C:\Users\wang\AppData\Local\Seecool\TestTool\信号源配置.xml
+[ERROR] [2016/01/26 15:57:01,242] [1] [0] VTSCore.Data.Common.ConfigFile`1: - 未能找到文件：C:\Users\wang\AppData\Local\Seecool\TestTool\CCTVConfig.xml
+[INFO] [2016/01/26 15:57:01,247] [1] [0] VTSCore.Layers.Tracks.MapTracks+<OnInitialized>d__0: - 初始化信号源配置完毕
+[WARN] [2016/01/26 15:57:06,961] [1] [0] VTSCore.Layers.Plotting.LocalRegions: - System.IO.FileNotFoundException: 未能找到文件“C:\Users\wang\AppData\Local\Seecool\TestTool\InvalidRadarAreaData.txt”。
+文件名:“C:\Users\wang\AppData\Local\Seecool\TestTool\InvalidRadarAreaData.txt”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path)
+   在 VTSCore.Layers.Plotting.LocalRegions.readLocalRegions()
+[INFO] [2016/01/26 15:57:08,047] [1] [0] System.Windows.Window: - 软件退出。

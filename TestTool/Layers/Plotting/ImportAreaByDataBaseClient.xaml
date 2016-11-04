@@ -1,0 +1,11 @@
+﻿<Window x:Class="VTSCore.Layers.Plotting.ImportAreaByDataBaseClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ResizeMode="NoResize"
+        Title="数据设置" Height="100" Width="500">
+    <Grid>
+        <TextBox Name="tbData" Margin="5,5,5,35" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+        <Button Name="btOk" Content="导入" Click="btOk_Click" Width="100" Height="25" VerticalAlignment="Bottom" Margin="-110,5,5,5" IsDefault="True"/>
+        <Button Name="btQuit" Content="取消" Click="btQuit_Click" Width="100" Height="25" VerticalAlignment="Bottom" Margin="110,5,5,5"/>
+    </Grid>
+</Window>

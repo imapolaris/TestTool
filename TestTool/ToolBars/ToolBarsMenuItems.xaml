@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="VTSCore.ToolBars.ToolBarsMenuItems"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cmd="clr-namespace:VTSCore.Commands"
+             mc:Ignorable="d"  Background="{x:Null}"
+             d:DesignHeight="100" d:DesignWidth="1200">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Menu}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Menu}" >
+                        <Border CornerRadius="0">
+                            <ItemsPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="ToolBarBtn">
+            <Setter Property="Background" Value="WhiteSmoke"/>
+            <Setter Property="MinWidth" Value="60"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="Back" CornerRadius="3" BorderThickness="1" 
+                                                Background="{TemplateBinding Background}" 
+                                                BorderBrush="{TemplateBinding BorderBrush}">
+                            <Grid>
+                                <ContentPresenter Margin="2"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <ToolBarPanel>
+        <StackPanel Background="WhiteSmoke">
+            <Menu Height="28" VerticalContentAlignment="Center" VerticalAlignment="Center">
+                <MenuItem Header="文件">
+                    <MenuItem Header="添加海图" Command="cmd:MenuItem.AddSeaChart"/>
+                    <MenuItem Header="打开配置路径" Click="OpenPath_Click"/>
+                    <MenuItem Header="退出系统" Command="cmd:MenuItem.ExitClick" />
+                </MenuItem>
+                <MenuItem Header="配置">
+                    <MenuItem Header="雷达配置" Click="RadarParameterSettings_Click"/>
+                    <MenuItem Header="CCTV配置" Click="CCTVConfig_Click"/>
+                    <MenuItem  Header="雷达区域" Click="PlottingArea_Click"/>
+                    <MenuItem Header="CCTV列表" Click="CCTVTreeView_Click"/>
+                </MenuItem>
+                <MenuItem Header="信号源"  Click="SignalSource_Click"/>
+                <MenuItem Header="显示设置">
+                    <MenuItem Header="雷达配色界面" Click="RadarColorClient_Click"/>
+                    <MenuItem Header="航迹线长度" Click="TrackLength_Click"/>
+                    <MenuItem Header="设置为启动位置" Click="StartUpPosition_Click"/>
+                </MenuItem>
+                <MenuItem Header="测试">
+                    <MenuItem Header="区域显示">
+                        <CheckBox Name="radarAreaIsMask" VerticalAlignment="Center" Content="屏蔽区" Click="radarAreaIsMask_Click" ToolTip="雷达区域性质"/>
+                        <CheckBox Name ="radarAreaManualExtract" VerticalAlignment="Center" Content="非自动录取区" Click="radarAreaManualExtract_Click" ToolTip="雷达区域性质"/>
+                        <CheckBox Name="radarAreaSimuVoyage" VerticalAlignment="Center" Content="模拟航行区" Click="radarAreaSimuVoyage_Click" ToolTip="雷达区域性质"/>
+                    </MenuItem>
+                    <MenuItem Header="视酷VTS">
+                        <CheckBox Name="cbSCVTSVerification" VerticalAlignment="Center" Content="开启视酷VTS验证" Click="cbSCVTSVerification_Click" ToolTip="是否启动对视酷VTS数据异常检验？"/>
+                        <CheckBox Name="cbOnlyShowIdentifiedTrack" VerticalAlignment="Center" Content="仅显示确定跟踪目标" Click="cbOnlyShowIdentifiedTrack_Click" ToolTip="视酷VTS是否仅显示确定跟踪目标？"/>
+                    </MenuItem>
+                    <MenuItem Header="船舶航迹显示">
+                        <CheckBox Name="cbShowHistoryTrackLine" VerticalAlignment="Center" Content="显示" Click="cbShowHistoryTrackLine_Click" ToolTip="是否显示所有船舶当前历史航迹？"/>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+            <ToolBarTray Background="WhiteSmoke">
+                <ToolBar Background="WhiteSmoke">
+                    <StackPanel Orientation="Horizontal"  Background="WhiteSmoke">
+                        <RadioButton Name="SeaChartMove" GroupName="seaChartMode" VerticalAlignment="Center" MinWidth="70" Content="移动海图" Click="MoveSeaChart_Click" IsChecked="True"/>
+                        <RadioButton Name="RadarMove" GroupName="seaChartMode" VerticalAlignment="Center" MinWidth="70" Content="移动雷达" Click="MoveRadarChart_Click"/>
+                        <RadioButton Name="RadarDrag" GroupName="seaChartMode" VerticalAlignment="Center" MinWidth="70" Content="拖拽雷达" Click="DragRadarChart_Click"/>
+                    </StackPanel>
+                </ToolBar>
+                <ToolBar  Background="WhiteSmoke">
+                    <StackPanel Orientation="Horizontal"  Background="WhiteSmoke">
+                        <Label Content="当前雷达:" VerticalAlignment="Center"/>
+                        <ComboBox Name="cbRadarSelect" ItemsSource="{Binding UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Heading" VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="150" SelectionChanged="cbRadarSelect_SelectionChanged" PreviewMouseLeftButtonDown="cbRadarSelect_PreviewMouseLeftButtonDown" MouseEnter="cbRadarSelect_MouseEnter" MouseLeave="cbRadarSelect_MouseLeave"/>
+                    </StackPanel>
+                </ToolBar>
+                <ToolBar  Background="WhiteSmoke">
+                    <Button Name="DistanceMeasurement" Click="DistanceMeasurement_Click" Style="{DynamicResource ToolBarBtn}" VerticalAlignment="Center" HorizontalAlignment="Center" >量算</Button>
+                    <Button Name="Tracking" Click="Tracking_Click" Style="{DynamicResource ToolBarBtn}" Content="跟踪" ToolTip="CCTV联动跟踪"/>
+                    <Button Name="LockAll" Click="LockAll_Click" Style="{DynamicResource ToolBarBtn}" Content="锁定" ToolTip="锁定所有信号源数据"/>
+                    <Button Name="ClearCache" Click="ClearCache_Click" Background="WhiteSmoke" Content="清空缓存" ToolTip="清空所有信号源数据"/>
+                </ToolBar>
+            </ToolBarTray>
+        </StackPanel>
+    </ToolBarPanel>
+
+</UserControl>
